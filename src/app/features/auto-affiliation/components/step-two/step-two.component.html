@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Email: </mat-label>
+        <input matInput formControlName="email">
+
+        @if (email?.hasError('required')) {
+            <mat-error>The Email is required!</mat-error>
+        }
+
+        @if (email?.hasError('email')) {
+            <mat-error>Invalid Email address !</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cellphone: </mat-label>
+        <input matInput formControlName="cellphone">
+
+        @if (cellphone?.hasError('required')) {
+            <mat-error>The Cellphone is required !</mat-error>
+        }
+    </mat-form-field>
+</form>

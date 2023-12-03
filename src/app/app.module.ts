@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AutoAffiliationModule } from './features/auto-affiliation/auto-affiliation.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AutoAffiliationModule } from './features/auto-affiliation/auto-affiliat
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AutoAffiliationModule
+    AutoAffiliationModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

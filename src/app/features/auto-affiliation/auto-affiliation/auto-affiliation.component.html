@@ -1,0 +1,37 @@
+<mat-stepper [linear]="true" #stepper (selectionChange)="saveChanges()">
+    <mat-step [stepControl]="profileForm">
+        <ng-template matStepLabel>Profile</ng-template>
+
+        @if (stepper.selectedIndex === 0) {
+            <app-step-one [form]="profileForm"></app-step-one>
+            
+            <div class="actions">
+                <button [disabled]="profileForm.invalid" mat-flat-button matStepperNext color="primary" [disabled]="profileForm.invalid">Next</button>
+            </div>
+        }
+    </mat-step>
+    <mat-step [stepControl]="contactForm">
+        <ng-template matStepLabel>Contact</ng-template>
+
+        @if (stepper.selectedIndex === 1) {
+            <app-step-two [form]="contactForm"></app-step-two>
+
+            <div class="actions">
+                <button mat-flat-button matStepperPrevious color="accent">Previous</button>
+                <button mat-flat-button matStepperNext color="primary" [disabled]="contactForm.invalid">Next</button>
+            </div>
+        }
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Recap</ng-template>
+
+        @if (stepper.selectedIndex === 2) {
+            <app-step-three></app-step-three>
+
+            <div class="actions">
+                <button mat-flat-button matStepperPrevious color="accent">Previous</button>
+                <button mat-flat-button matStepperNext color="primary">Next</button>
+            </div>
+        }
+    </mat-step>
+</mat-stepper>

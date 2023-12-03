@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Firstname: </mat-label>
+        <input matInput formControlName="firstName">
+
+        @if (firstName?.hasError('required')) {
+            <mat-error>The Firstname is required !</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Lastname: </mat-label>
+        <input matInput formControlName="lastName">
+
+        @if (lastName?.hasError('required')) {
+            <mat-error>The Lastname is required !</mat-error>
+        }
+    </mat-form-field>
+</form>
