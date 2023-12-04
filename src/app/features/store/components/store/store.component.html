@@ -1,0 +1,14 @@
+
+
+@for (item of items$ | async; track $index) {
+    <div style="border: 1px solid black; padding: 1rem; margin: 1rem;">
+        <section>
+            <h2>{{ item.title }}</h2>
+            <img [src]="item.thumbnailUrl">
+            <br>
+            <button mat-flat-button (click)="addToCart(item)" color="accent">
+                Add to cart <mat-icon>shopping_cart</mat-icon>
+            </button>
+        </section>
+    </div>
+}

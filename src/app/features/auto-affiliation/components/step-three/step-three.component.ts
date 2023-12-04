@@ -27,7 +27,7 @@ export class StepThreeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     console.log('Init Recap');
     this.subscription = this.autoAffService
-      .getData()
+      .data$
       .pipe(
         first()
       )

@@ -17,3 +17,13 @@
         }
     </mat-form-field>
 </form>
+
+
+@if (posts$ | async; as posts) {
+    @for (post of posts; track post.title) {
+        <button mat-flat-button color="primary" style="display: block;">Get the comments of post {{ post.id }}</button>
+    }
+    @empty {
+        <div>Nothing here :)</div>
+    }
+}

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AutoAffiliationModule } from './features/auto-affiliation/auto-affiliation.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TemplateModule } from './features/template/template.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     AutoAffiliationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

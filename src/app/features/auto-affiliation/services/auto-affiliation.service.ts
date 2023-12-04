@@ -21,13 +21,13 @@ export interface AutoAffData {
 })
 export default class AutoAffiliationService {
 
-  private autoAffiliationData$: ReplaySubject<AutoAffData> = new ReplaySubject<AutoAffData>(1);
+  private readonly autoAffiliationData$: ReplaySubject<AutoAffData> = new ReplaySubject<AutoAffData>(1);
 
-  notify(autoAffData: AutoAffData): void {
-    this.autoAffiliationData$.next(autoAffData);
+  save(data: AutoAffData): void {
+    this.autoAffiliationData$.next(data);
   }
 
-  getData(): Observable<AutoAffData> {
+  get data$(): Observable<AutoAffData> {
     return this.autoAffiliationData$.asObservable();
   }
 }
